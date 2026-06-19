@@ -294,6 +294,8 @@ document.getElementById('start-btn').addEventListener('click', () => {
   startLevel(1);
 });
 
+document.getElementById('start-screen').addEventListener('show', buildLevelGrid);
+
 document.getElementById('next-btn').addEventListener('click', () => {
   document.getElementById('level-complete').style.display = 'none';
   startLevel(currentLevel + 1);
@@ -308,3 +310,23 @@ window.addEventListener('resize', () => { resizeCanvas(); render(); });
 
 // Init best display
 document.getElementById('best-display').textContent = bestLevel;
+
+// Build level select grid (levels 1–10)
+function buildLevelGrid() {
+  const grid = document.getElementById('level-grid');
+  grid.innerHTML = '';
+  for (let i = 1; i <= 10; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    btn.className = 'level-btn' + (i > bestLevel ? ' locked' : '');
+    if (i <= bestLevel) {
+      btn.addEventListener('click', () => {
+        document.getElementById('start-screen').style.display = 'none';
+        startLevel(i);
+      });
+    }
+    grid.appendChild(btn);
+  }
+}
+
+buildLevelGrid();

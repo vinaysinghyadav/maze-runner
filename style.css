@@ -104,3 +104,30 @@ button {
 }
 
 button:hover { background: #7c3aed; }
+
+.level-select { margin-top: 8px; }
+.level-select-label { font-size: 13px; color: #888; margin-bottom: 8px; }
+
+#level-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.level-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  background: #2d2d50;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.level-btn:hover { background: #6d28d9; border-color: #a78bfa; }
+.level-btn.locked { background: #1a1a2e; color: #444; cursor: not-allowed; }
+.level-btn.locked:hover { background: #1a1a2e; border-color: transparent; }
