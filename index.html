@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maze Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-label">LEVEL</span>
+        <span class="hud-value" id="level-display">1</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">STEPS</span>
+        <span class="hud-value" id="steps-display">0</span>
+      </div>
+      <div class="hud-item" id="timer-box" style="display:none">
+        <span class="hud-label">TIME</span>
+        <span class="hud-value" id="timer-display">60</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">BEST</span>
+        <span class="hud-value" id="best-display">1</span>
+      </div>
+    </div>
+
+    <canvas id="maze-canvas"></canvas>
+
+    <!-- Overlays -->
+    <div class="overlay" id="start-screen">
+      <div class="overlay-box">
+        <h1>Maze Runner</h1>
+        <p>Find the <span class="green">green exit</span>. Beware of fake ones!</p>
+        <p>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to move.</p>
+        <button id="start-btn">Start Game</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="level-complete" style="display:none">
+      <div class="overlay-box">
+        <h2 id="complete-title">Level Complete!</h2>
+        <p id="complete-steps"></p>
+        <p id="complete-time"></p>
+        <button id="next-btn">Next Level →</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="game-over-screen" style="display:none">
+      <div class="overlay-box">
+        <h2>Time's Up!</h2>
+        <p id="gameover-level"></p>
+        <button id="retry-btn">Retry Level</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
