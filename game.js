@@ -8,18 +8,18 @@ const LEVELS = [
   { size: 15, timer: 55, fog: false, fakeExits: 0 },
   { size: 18, timer: 50, fog: false, fakeExits: 2 },
   { size: 20, timer: 45, fog: false, fakeExits: 2 },
-  { size: 22, timer: 40, fog: true,  fakeExits: 0 },
-  { size: 25, timer: 35, fog: true,  fakeExits: 0 },
-  { size: 28, timer: 30, fog: true,  fakeExits: 3 },
-  { size: 30, timer: 25, fog: true,  fakeExits: 3 },
-  { size: 35, timer: 20, fog: true,  fakeExits: 3 },
+  { size: 22, timer: 90, fog: true,  fakeExits: 0 },
+  { size: 25, timer: 80, fog: true,  fakeExits: 0 },
+  { size: 28, timer: 70, fog: true,  fakeExits: 3 },
+  { size: 30, timer: 60, fog: true,  fakeExits: 3 },
+  { size: 35, timer: 50, fog: true,  fakeExits: 3 },
 ];
 
 function getLevelConfig(level) {
   if (level <= 10) return LEVELS[level];
   return {
     size: 35 + (level - 10) * 3,
-    timer: Math.max(15, 20 - (level - 10)),
+    timer: Math.max(30, 50 - (level - 10) * 2),
     fog: true,
     fakeExits: 3,
   };
